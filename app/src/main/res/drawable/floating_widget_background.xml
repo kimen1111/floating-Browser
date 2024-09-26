@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#9FFFFF"/> <!-- 通常時の背景色 -->
+    <stroke android:width="2dp" android:color="#000000"/> <!-- 通常時のボーダー色 -->
+</shape>

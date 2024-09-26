@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/floating_widget_background">
+
+    <!-- ヘッダー背景 (黒) -->
+    <View
+        android:id="@+id/header_background"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1073A8"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="2dp"/>
+    <!-- テキストボックスを左端から50dpまで配置 -->
+
+    <EditText
+        android:id="@+id/header_textbox"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:hint="URL取得中..."
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="100dp"
+        android:layout_below="@id/header_background"
+        android:layout_toStartOf="@+id/textbox_button"/>
+    <Button
+        android:id="@+id/textbox_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="Button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:background="#F073A8"
+        android:layout_below="@id/header_background"/>
+
+
+
+
+    <ImageView
+        android:id="@+id/circle1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/black_circle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="93dp"
+        android:layout_marginTop="12dp"/>
+
+    <!-- 最小化ボタン (右上: 星形アイコン) -->
+    <ImageView
+        android:id="@+id/minimize_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_minimize"
+        android:contentDescription="最小化ボタン"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <!-- クローズボタン (右上: Xアイコン) -->
+    <ImageView
+        android:id="@+id/close_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_close2"
+        android:contentDescription="@string/close_button_description"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="13dp" />
+
+    <!-- フローティングウィンドウのコンテンツエリア (青)-->
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header_textbox"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp" />
+    <!-- フルスクリーンエリア -->
+    <FrameLayout
+        android:id="@+id/fullscreen_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_background"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:visibility="gone" /> <!-- 初期状態では非表示 -->
+    <!-- ウィンドウの右辺にリサイズ用のビューを追加 -->
+    <View
+        android:id="@+id/resize_handle_right"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent" />
+
+    <!-- ウィンドウの下辺にリサイズ用のビューを追加 -->
+    <View
+        android:id="@+id/resize_handle_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent" />
+    
+
+</RelativeLayout>
